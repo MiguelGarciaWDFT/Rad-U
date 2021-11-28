@@ -21,8 +21,10 @@ app.use(express.urlencoded({ extended: true }))
 connectDB()
 
 //Rutas
+app.use("/content", require("./routes/content"))
 app.use("/users", require("./routes/users"))
 app.use("/", require("./routes/index"))
+
 
 //Servidor
 app.listen(process.env.PORT, () => {
