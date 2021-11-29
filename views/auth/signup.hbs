@@ -1,16 +1,22 @@
+<div>
 <h1>Iniciar sesión</h1>
-		
 <form action="/auth/signup" method="POST">
 
-    <label>Nombre de Usuario</label>
+    <label>Nombre de usuario</label>
 	<input type="text" name="username" placeholder="nombre" />
 
-	<label>Correo electronico</label>
-	<input type="email" name="email" placeholder="correo" />
+	<label>Correo electrónico</label>
+	<input type="text" name="email" placeholder="correo" />
 
 	<label>Contraseña</label>
 	<input type="password" name="password" placeholder="********" />
 
 	<button type="submit">Iniciar sesión</button>
-
 </form>
+
+	{{#if errorMessage}}
+		<p class="error">{{errorMessage}}</p>
+	{{/if}}
+
+</div>
+		
