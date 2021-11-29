@@ -1,0 +1,17 @@
+<h1>Inicio de sesion</h1>
+
+<form action="/auth/login" method="POST">
+
+<label>Correo electrónico</label>
+<input type="email" name="email" placeholder="correo electrónico">
+
+<label>Contraseña</label>
+<input type="password" name="password" placeholder="contraseña">
+
+<button type="submit">Iniciar sesión</button>
+
+{{#if errorMessage}}
+<p>{{errorMessage}}</p>
+{{/if}}
+
+</form>

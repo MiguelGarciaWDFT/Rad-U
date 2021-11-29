@@ -1,11 +1,12 @@
 const User = require("./../models/Users")
 const bcryptjs = require("bcryptjs")
-const async = require("hbs/lib/async")
+
 
 
 exports.viewRegister = (req, res) => {
     res.render("auth/signup")
 }
+
 
 
 exports.register = async(req, res) => {
@@ -61,4 +62,55 @@ exports.register = async(req, res) => {
             errorMessage: "Correo electrónico invalido, no usar espacios"
         })
     }
+}
+
+exports.viewLogin = async(req, res) => {
+    res.render("auth/login")
+}
+
+exports.login = async(req, res) => {
+
+    //Obtencion de datos del formulario
+
+    const email = req.body.email
+    const password = req.body.password
+
+    try {
+
+        //Validacion de usuario encontrado en base de datos
+
+        const foundUser = await User.findOne({ email })
+        console.log(foundUser);
+
+        if (!foundUser) {
+            res.render("auth/login", {
+                errorMessage: "Correo electrónico o contraseña sin coincidencias."
+            })
+
+            return
+        }
+
+        //Validacion de contraseña
+
+        const verifiedPass = await bcryptjs.compareSync(password, foundUser.passwordEncriptado)
+
+        if (!verifiedPass) {
+            res.render("auth/login", {
+                errorMessage: "Correo electrónico o contraseña sin coindicendias."
+            })
+            return
+
+        }
+
+        //Generar sesion
+
+
+
+        //Redireccionar al home
+        res.redirect("/")
+
+    } catch (error) {
+        console.log(error)
+    }
+
 }

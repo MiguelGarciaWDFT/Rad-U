@@ -4,9 +4,10 @@ const app = express()
 
 const hbs = require("hbs")
 
+require("dotenv").config()
+
 const connectDB = require("./config/db")
 
-require("dotenv").config()
 
 //Middlewares
 app.use(express.static("public"))

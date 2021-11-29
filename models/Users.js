@@ -18,13 +18,9 @@ const userSchema = mongoose.Schema({
 
 })
 
-
 //MODELO
 
 const User = mongoose.model("User", userSchema)
-
-
-
 
 //EXPORTACION
 
