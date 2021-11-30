@@ -1,13 +1,9 @@
 const User = require("./../models/Users")
 const bcryptjs = require("bcryptjs")
 
-
-
 exports.viewRegister = (req, res) => {
     res.render("auth/signup")
 }
-
-
 
 exports.register = async(req, res) => {
 
@@ -53,7 +49,7 @@ exports.register = async(req, res) => {
         //console.log(newUser)
 
         //Reedireccion al usuario
-        res.redirect("/")
+        res.redirect("/auth/login")
 
     } catch (error) {
         //console.log(error);
@@ -80,7 +76,6 @@ exports.login = async(req, res) => {
         //Validacion de usuario encontrado en base de datos
 
         const foundUser = await User.findOne({ email })
-        console.log(foundUser);
 
         if (!foundUser) {
             res.render("auth/login", {
@@ -103,14 +98,32 @@ exports.login = async(req, res) => {
         }
 
         //Generar sesion
+        req.session.currentUser = {
+            _id: foundUser._id,
+            username: foundUser.username,
+            email: foundUser.email,
+            mensaje: "Sesion generada"
 
+        }
 
 
         //Redireccionar al home
-        res.redirect("/")
+        res.redirect("/users/profile")
 
     } catch (error) {
         console.log(error)
     }
 
+}
+
+exports.logout = async(req, res) => {
+
+    req.session.destroy((error) => {
+        if (error) {
+            console.log(error);
+            return
+        }
+    })
+
+    res.redirect("/")
 }
