@@ -6,7 +6,6 @@ const usersController = require("./../controllers/usersController")
 
 const routeGuard = require("./../middlewares/route-guard")
 
-console.log("el routeguard importado es:", routeGuard.usuarioConectado);
 //ruteo
 
 router.get("/profile", routeGuard.usuarioConectado, usersController.profile)

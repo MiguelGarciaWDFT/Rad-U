@@ -1,3 +1,3 @@
-exports.content = async(req, res) => {
-    res.send("Pagina de contenido")
+exports.viewGaleria = async(req, res) => {
+    res.render("rayosx/estudios")
 }

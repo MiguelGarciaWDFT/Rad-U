@@ -17,7 +17,6 @@ app.use(express.static("public"))
 app.set("views", __dirname + "/views")
 app.set("view engine", "hbs")
 
-hbs.registerPartials(__dirname + "/views/partials")
 
 app.use(express.urlencoded({ extended: true }))
 
@@ -29,7 +28,7 @@ app.use((req, res, next) => {
     next()
 })
 app.use("/auth", require("./routes/auth"))
-app.use("/content", require("./routes/content"))
+app.use("/galeria", require("./routes/galeria"))
 app.use("/users", require("./routes/users"))
 app.use("/", require("./routes/index"))
 

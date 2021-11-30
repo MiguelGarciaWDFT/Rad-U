@@ -1,70 +1,57 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+    <script src="/scripts/script.js" defer></script>
     <title>Rad-U</title>
-</head>
+  </head>
+
+  <body>
+
+    
+
+    <nav>
+
+      <ul>
+      
+        {{#if currentUser}}
+
+          <li>
+            <a href="/users/profile">Mi perfil</a>
+          </li>
+
+          
+          <li>
+            <a href="/galeria">Galeria</a>
+          </li>
+
+          <form action="/auth/logout" method="POST">
+            <button>Cerrar sesión</button>
+          </form>
+
+        
+        {{else}}
 
 
-<body>
-   
-    {{{body}}}
-
-<nav>
-
-<ul>
-
-<li>
-    <a href="/">Inicio</a>
-</li>
-
-{{#if currentUser}}
-
-<li>
-    <a href="/users/profile">Mi perfil</a>
-</li>
-
-<form action="/auth/logout" method="POST">
-    <button>Cerrar sesión</button>
-</form>
-
-<p>Te damos la bienvenida {{currentUser.username}}</p>
-
-{{else}}
-<li>
-    <a href="/auth/signup">Registrarse</a>
-</li>
-
-<li>
-    <a href="/auth/login">Iniciar sesión</a>
-</li>
-{{/if}}
-
-</ul>
-
-</nav>
-
-<section aria-label="Newest Photos">
-    <div class="carousel" data-carousel>
-      <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
-      <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
-      <ul data-slides>
-        <li class="slide" data-active>
-          <img src="/public/images/Imagen-Medica-Actualpacs.png" alt="Nature Image #1">
+        <li>
+          <a href="/">Inicio</a>
         </li>
-        <li class="slide">
-          <img src="https://source.unsplash.com/eOpewngf68w" alt="Nature Image #2">
-        </li>
-        <li class="slide">
-          <img src="https://source.unsplash.com/ndN00KmbJ1c" alt="Nature Image #3">
-        </li>
+
+         
+          <li>
+            <a href="/auth/signup">Registrarse</a>
+          </li>
+
+          <li>
+            <a href="/auth/login">Iniciar sesión</a>
+          </li>
+        {{/if}}
+
       </ul>
-    </div>
-  </section>
-  
-  
-</body>
+
+    </nav>
+{{{body}}}
+  </body>
 </html>
