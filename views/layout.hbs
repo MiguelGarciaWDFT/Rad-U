@@ -10,8 +10,6 @@
 
   <body>
 
-    
-
     <nav>
 
       <ul>
@@ -22,7 +20,6 @@
             <a href="/users/profile">Mi perfil</a>
           </li>
 
-          
           <li>
             <a href="/galeria">Galeria</a>
           </li>
@@ -31,22 +28,19 @@
             <button>Cerrar sesión</button>
           </form>
 
-        
         {{else}}
-
 
         <li>
           <a href="/">Inicio</a>
         </li>
 
-         
-          <li>
-            <a href="/auth/signup">Registrarse</a>
-          </li>
+        <li>
+          <a href="/auth/signup">Registrarse</a>
+        </li>
 
-          <li>
-            <a href="/auth/login">Iniciar sesión</a>
-          </li>
+        <li>
+          <a href="/auth/login">Iniciar sesión</a>
+       </li>
         {{/if}}
 
       </ul>

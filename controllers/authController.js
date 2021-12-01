@@ -46,13 +46,10 @@ exports.register = async(req, res) => {
             passwordEncriptado
         })
 
-        //console.log(newUser)
-
         //Reedireccion al usuario
         res.redirect("/auth/login")
 
     } catch (error) {
-        //console.log(error);
 
         res.status(500).render("auth/signup", {
             errorMessage: "Correo electrónico invalido, no usar espacios"
