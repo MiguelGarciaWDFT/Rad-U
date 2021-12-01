@@ -1,8 +1,12 @@
+//importaciones
 const express = require("express")
 const router = express.Router()
+const galeriaController = require("../controllers/galeriaController")
 
-const contentController = require("../controllers/contentController")
+//ruteo con base url
 
-router.get("/", contentController.viewGaleria)
+//lectura de articulos creados en galeria
+router.get("/", galeriaController.getAllGalerias, )
 
+//exportacion
 module.exports = router

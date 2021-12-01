@@ -105,7 +105,7 @@ exports.login = async(req, res) => {
 
 
         //Redireccionar al home
-        res.redirect("/galeria")
+        res.redirect("/users/profile")
 
     } catch (error) {
         console.log(error)
