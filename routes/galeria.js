@@ -19,5 +19,9 @@ router.get("/:galeriaID", galeriaController.getGaleria)
 router.get("/:galeriaID/edit", galeriaController.viewEditGaleria)
 router.post("/:galeriaID/edit", galeriaController.editGaleria)
 
+//borrar galeria
+
+router.post("/:galeriaID/delete", galeriaController.deleteGaleria)
+
 //exportacion
 module.exports = router

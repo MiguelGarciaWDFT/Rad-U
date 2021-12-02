@@ -76,5 +76,11 @@ exports.editGaleria = async(req, res) => {
     res.redirect(`/galeria/${updatedGaleria._id}`)
 }
 
+exports.deleteGaleria = async(req, res) => {
+    const galeriaID = req.params.galeriaID
 
-//delete
+    const deletedGaleria = await Galeria.findByIdAndDelete(galeriaID)
+    console.log(deletedGaleria);
+
+    res.redirect("/galeria")
+}
