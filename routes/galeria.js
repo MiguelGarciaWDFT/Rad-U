@@ -4,9 +4,16 @@ const router = express.Router()
 const galeriaController = require("../controllers/galeriaController")
 
 //ruteo con base url
+//crear
+router.get("/create", galeriaController.viewCreateGaleria)
+router.post("/create", galeriaController.createGaleria)
 
-//lectura de articulos creados en galeria
-router.get("/", galeriaController.getAllGalerias, )
+
+//lectura de articulos en galeria
+router.get("/", galeriaController.getAllGalerias)
+
+//lectura / acceso a una galeria
+router.get("/:galeriaID", galeriaController.getGaleria)
 
 //exportacion
 module.exports = router
