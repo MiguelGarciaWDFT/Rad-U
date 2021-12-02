@@ -1,12 +1,18 @@
 <h1>Listado de galerias</h1>
 
+<a href="/galeria/create">Crear galeria</a>
+
 <ul>
 {{#each data}}
+<li>
+    <p>{{this.imageUrl}}</p>
+    <h1>{{this.name}}</h1>
+    <p>{{this.description}}</p>
+    <p>{{this.interestingFacts}}</p>
+    <a href="/galeria/{{this._id}}">Ver galeria</a>
+    <a href="/galeria/{{this._id}}/edit">Editar galeria</a>
 
-<li>{{this.imageUrl}}</li>
-<li>{{this.name}}</li>
-
-<a href="/galeria/{{this._id}}">Ver galeria</a>
+</li>
 
 {{/each}}
 

@@ -1,0 +1,31 @@
+<h1>Editar galeria</h1>
+
+Este es el id: {{data._id}}
+
+<form action="/galeria/{{data._id}}/edit" method="POST">
+	
+    <label>Título de la galeria</label>
+	<input type="text" name="name" value="{{data.name}}"/>
+
+	<br />
+
+	<label>Descripción</label>
+	<textarea type="text" name="description" />
+	
+	</textarea>
+
+	<br />
+
+	<label>Datos interesantes</label>
+	<textarea type="text" name="interestingFacts" />
+
+    </textarea>
+
+    <br/>
+
+	<button>
+		Guardar cambios de la galeria
+	</button>
+
+
+</form>

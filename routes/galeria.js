@@ -15,5 +15,9 @@ router.get("/", galeriaController.getAllGalerias)
 //lectura / acceso a una galeria
 router.get("/:galeriaID", galeriaController.getGaleria)
 
+//editar galeria
+router.get("/:galeriaID/edit", galeriaController.viewEditGaleria)
+router.post("/:galeriaID/edit", galeriaController.editGaleria)
+
 //exportacion
 module.exports = router
