@@ -15,12 +15,9 @@ const galeriaSchema = mongoose.Schema({
     interestingFacts: {
         type: String
     },
-    photoUrl: {
+    likes: {
         type: String
     },
-    userCreator: {
-        type: String
-    }
 }, {
     timestamps: true
 })

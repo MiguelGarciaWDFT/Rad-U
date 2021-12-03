@@ -19,6 +19,9 @@ router.get("/:galeriaID", galeriaController.getGaleria)
 router.get("/:galeriaID/edit", galeriaController.viewEditGaleria)
 router.post("/:galeriaID/edit", galeriaController.editGaleria)
 
+//
+router.post("/:likeID/:counter/like", galeriaController.likeGaleria)
+
 //borrar galeria
 
 router.post("/:galeriaID/delete", galeriaController.deleteGaleria)

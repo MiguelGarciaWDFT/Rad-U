@@ -6,6 +6,7 @@
 
 body {
     margin: 0;
+    background-color: #E5E7EB;
 }
 
 .carousel {
@@ -73,4 +74,16 @@ body {
 
 .carousel-button.next {
     right: 1rem;
+}
+
+.like__btn {
+    padding: 10px 15px;
+    background: #0080ff;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    border-radius: 5px;
+    color: #e8efff;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }

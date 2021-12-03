@@ -1,7 +1,54 @@
-<h1>Perfil de usuario</h1>
+
+
+{{!-- profile.hbs --}}
 {{#if currentUser}}
- <p>Te damos la bienvenida {{currentUser.username}}</p>
+<div class="min-h-full">
+
+  <main class="py-10">
+    <!-- Page header -->
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 md:flex md:items-center md:justify-between md:space-x-5 lg:max-w-7xl lg:px-8">
+      <div class="flex items-center space-x-5">
+        <div class="flex-shrink-0">
+          <div class="relative">
+            <img class="h-16 w-16 rounded-full" src="https://i2.wp.com/www.anfrix.com/wp-content/uploads/2019/06/388-1.png?resize=800%2C800&ssl=1" alt="">
+            <span class="absolute inset-0 shadow-inner rounded-full" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div>
+          <h1 class="text-2xl font-bold text-gray-900">Perfil de usuario</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
+      <div class="space-y-6 lg:col-start-1 lg:col-span-2">
+        <!-- Description list-->
+        <section aria-labelledby="applicant-information-title">
+          <div class="bg-white shadow sm:rounded-lg">
+            <div class="px-4 py-5 sm:px-6">
+              <h2 id="applicant-information-title" class="text-lg leading-6 font-medium text-gray-900">
+                 Te damos la bienvenida {{currentUser.username}}
+              </h2>
+               <h2 id="applicant-information-title" class="text-lg leading-6 font-medium text-gray-900">
+                 Explora el contenido de tu gusto, lee y comparte la información con alguien cercano.
+              </h2>
+              <p class="mt-1 max-w-2xl text-sm text-gray-500">
+               Rad-U te ayudara a tomar la desición mas educada en cuanto a cuidar de tú salud se trate, es una pequeña galería que contiene contenido seleccionado de radiología y datos curiosos que tienen la intención de dar a conocer curiosidades que rodean a una rama de la medicina que es esencial para el cuidado de la salud. 
+              </p>
+               <p class="mt-1 max-w-2xl text-sm text-gray-500">
+               ¿Te gusto el contenido actual? ¿crees que se puede mejorar? ¿puedo compartir información asi de importante en esta plataforma?
+              </p>
+               <p class="mt-1 max-w-2xl text-sm text-gray-500">
+           SI a todo. rad-u@outlook.com es el primer contacto que tendras con los desarrolladores para que puedas escribirnos tus sujerencias en cuanto a los contenidos o si te gustaria colaborar en alguna galeria con nosotros. 
+              </p>
+               <p class="mt-1 max-w-2xl text-sm text-gray-500">
+         La idea principal de Rad-U es actualizar contenidos con el tiempo y poder agregar o actualizar otras galerias relacionadas con cualquier rama de la medicina.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</div>
 {{/if}}
-<h2>
-    <p>Explora el contenido de tu gusto, lee y comparte tus comentarios con otros usuarios.</p>
-</h2>

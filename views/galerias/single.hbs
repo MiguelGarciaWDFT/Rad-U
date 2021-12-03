@@ -1,14 +1,22 @@
 {{#with data}}
+  <div
+    class="w-full h-56 bg-gray-200 rounded-md overflow-hidden group-hover:opacity-75 lg:h-72 xl:h-80"
+  >
+    <img
+      src="{{this.imageUrl}}"
+      alt="Hand stitched, orange leather long wallet."
+      class="w-full h-full object-center object-cover"
+    />
+  </div>
+  <h3 class="text-2xl m-4">{{this.name}}</h3>
+  <p class="m-6 text-justify">{{this.description}}</p>
+  <p class="m-6 text-justify">{{this.interestingFacts}}</p>
 
-<li>{{this.imageUrl}}</li>
-<li>{{this.name}}</li>
-<li>{{this.description}}</li>
-<li>{{this.interestingFacts}}</li>
-<li>{{this.photoUrl}}</li>
-
-<button class="like__btn">
-   <span id="icon"><i class="far fa-thumbs-up"></i></span>
-   <span id="count">0</span> Like
-</button>
+  <form method="POST" action="/galeria/{{this._id}}/{{this.likes}}/like">
+    <button type="submit" class="like__btn m-4 ">
+      <span id="icon"><i class="far fa-thumbs-up"></i></span>
+      <span id="count">{{this.likes}}</span>
+      Likes
+    </button></form>
 
 {{/with}}

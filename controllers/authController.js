@@ -29,7 +29,7 @@ exports.register = async(req, res) => {
     if (!regex.test(password)) {
 
         res.render("auth/signup", {
-            errorMessage: "Tú contraseña debe contener 8 caracteres, mínimo un número y una mayúscula."
+            errorMessage: "Tu contraseña debe contener 8 caracteres, mínimo un número y una mayúscula."
         })
 
         return
