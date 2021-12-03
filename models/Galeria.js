@@ -17,6 +17,9 @@ const galeriaSchema = mongoose.Schema({
     },
     photoUrl: {
         type: String
+    },
+    userCreator: {
+        type: String
     }
 }, {
     timestamps: true

@@ -6,6 +6,9 @@ const usersController = require("./../controllers/usersController")
 
 const routeGuard = require("./../middlewares/route-guard")
 
+
+
+
 //ruteo
 
 router.get("/profile", routeGuard.usuarioConectado, usersController.profile)
